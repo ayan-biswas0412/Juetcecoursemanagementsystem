@@ -55,12 +55,13 @@
 
         <section class="entry" id="staff">
             <form action="includes/login.inc.php" method="post" class="left">
-                Username:<br><input type="text" name="uname" placeholder ="Name/Email"><br><br>
-                Role:<br><select name="role">
+                Username:<br><input type="text" name="u_name" placeholder ="Name/Email"><br><br>
+                Roll Number:<br><input type="number" name="roll_no" placeholder ="001910701001"><br><br>
+                Role:<br><select>
                             <option value="admin">ADMIN</option>
                             <option value="faculty">FACULTY</option>
                         </select><br><br>
-                Password:<br><input type="password" name="pwd"><br><br><br>
+                Password:<br><input type="password" name="pwdl"><br><br><br>
                 <a class="right" href="reset-password.php">Forgot Password?</a>
                 <button class="submit-buttons" type="submit" name="login-staff-submit"><b>Login</b></button>
             </form>
