@@ -51,8 +51,28 @@
         <h3 class="heading"> Login Here </h3>
         <section class="entry" id="student">
             <form action="includes/login.inc.php" method="post" class="left">
-                Username<br><input type="text" name="u_name" placeholder ="Full name / Email"><br><br>
-                Roll Number (12 digit)<br><input type="number" name="roll_no" placeholder ="0020107010XX"><br><br>
+                Username<br>
+                <?php
+                if(isset($_GET['username'])){
+                $u=$_GET['username'];
+                echo '<input type="text" name="u_name" placeholder ="Full name / Email" value="'.$u.'">' 
+                }   
+                else{
+                echo ' <input type="text" name="u_name" placeholder ="Full name / Email">';
+                }
+                ?>
+                <br><br>
+                Roll Number (12 digit)<br>
+                <?php
+                if(isset($_GET['roll'])){
+                $r=$_GET['roll'];
+                echo '<input type="number" name="roll_no" placeholder ="0020107010XX" value="'.$r.'">' ;
+                }   
+                else{
+                echo '<input type="number" name="roll_no" placeholder ="0020107010XX">';
+                }
+                ?>
+                <br><br>
                 Password<br><input type="password" name="pwdl"><br><br><br>
                 <a class="left" href="signup.php">Create new account</a>&emsp;
                 <a class="right" href="reset-password.php">Forgot Password?</a><br><br>
@@ -62,7 +82,17 @@
 
         <section class="entry" id="staff">
             <form action="includes/login.inc.php" method="post" class="left">
-                Username<br><input type="text" name="uname" placeholder ="Name/Email"><br><br>
+                Username<br>
+                <?php
+                if(isset($_GET['username'])){
+                $u=$_GET['username'];
+                echo '<input type="text" name="uname" placeholder ="Name/Email" value="'.$u.'">' 
+                }   
+                else{
+                echo ' <input type="text" name="uname" placeholder ="Name/Email">';
+                }
+                ?>
+                 <br><br>
                 Role<br><select name="role">
                             <option value="admin">ADMIN</option>
                             <option value="faculty">FACULTY</option>
