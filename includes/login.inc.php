@@ -13,7 +13,7 @@
             exit();
         }
         else if(!filter_var($username,FILTER_VALIDATE_EMAIL) && !preg_match("/^[a-z A-Z]*$/",$username)){
-            header("Location: ../login.php?login-type=student&error=invalidusername");
+            header("Location: ../login.php?login-type=student&error=invalidusername&roll=$rollno");
             exit();
         }
         else{
@@ -30,7 +30,7 @@
                 if($row = mysqli_fetch_assoc($result)){
                     $pwdCheck = password_verify($password,$row['pwd']);
                     if($pwdCheck == false){
-                        header("Location: ../login.php?login-type=student&error=wrongpassword");
+                        header("Location: ../login.php?login-type=student&error=wrongpassword&username=$username&roll=$rollno");
                         exit();
                     }
                     else if($pwdCheck == true){
@@ -104,7 +104,7 @@
                 if($row = mysqli_fetch_assoc($result)){
                     $pwdCheck = password_verify($password,$row['pwd']);
                     if($pwdCheck == false){
-                        header("Location: ../login.php?login-type=staff&error=wrongpassword");
+                        header("Location: ../login.php?login-type=staff&error=wrongpassword&username=$username&roll=$rollno");
                         exit();
                     }else if($pwdCheck == true){
                         session_start();
