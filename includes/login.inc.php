@@ -87,7 +87,7 @@
             exit();
         }
         else if(!filter_var($username,FILTER_VALIDATE_EMAIL) && !preg_match("/^[a-z A-Z]*$/",$username)){
-            header("Location: ../login.php?login-type=staff&error=invalidusername&role=$role");
+            header("Location: ../login.php?login-type=staff&error=invalidusername");
             exit();
         } else{
 
@@ -104,7 +104,7 @@
                 if($row = mysqli_fetch_assoc($result)){
                     $pwdCheck = password_verify($password,$row['pwd']);
                     if($pwdCheck == false){
-                        header("Location: ../login.php?login-type=staff&error=wrongpassword&username=$username&role=$role");
+                        header("Location: ../login.php?login-type=staff&error=wrongpassword&username=$username");
                         exit();
                     }else if($pwdCheck == true){
                         session_start();
