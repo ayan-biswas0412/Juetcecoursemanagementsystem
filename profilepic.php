@@ -36,7 +36,7 @@
         </section><br><br>
         <section class="entry" id = "deleteimg-section">
             <p>Delete Profile Picture</p>
-            <form action="includes/profilepic.inc.php" method="post" enctype="multipart/form-data">
+            <form action="includes/profilepic.inc.php" method="post">
                 <button class="submit-buttons" id="button" type="submit" name="delete-pic-submit">Delete Image</button>
             </form>
         </section>
